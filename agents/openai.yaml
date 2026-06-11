@@ -1,0 +1,4 @@
+interface:
+  display_name: "过稿通关skill"
+  short_description: "调用既有协作沉淀，按上下文推进过稿。"
+  default_prompt: "Use $guogao-tongguan-skill to ground this task in prior collaboration context and improve pass-review alignment."

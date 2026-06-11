@@ -1,188 +1,248 @@
 ---
-name: 酷狗过稿第一人
-description: 用于把设计稿、活动页、商业化页面、概念版方案或播放器创意，按“更容易被酷狗内部评审一眼通过”的方式收敛成可过稿版本。适合用户说“帮我收一下这版”“按柱哥会过的方式改”“做得更耐看、更像能上线”“别太飘，帮我过稿”这类任务。
-description_zh: 提炼酷狗设计评审中的过稿判断、收敛方式与落地优先级，输出更容易过稿的方案
-description_en: Distill a Kugou-style review and signoff lens for making designs easier to approve
-version: 1.0.0
+name: guogao-tongguan-skill
+description: Use when a task needs to pass design or product review by grounding decisions in previously imported collaboration context, especially for campaign work, concept exploration, growth design, product experience feedback, or AI design exploration.
 ---
 
-# 酷狗过稿第一人
+# 过稿通关skill
 
-## 这是什么
+Use this skill to route a collaboration-heavy task to the right imported context before proposing designs, product logic, review feedback, or implementation direction, so the output is more likely to顺着既有语境过稿。
 
-这不是单纯的“审美型评审” skill，而是一个 **过稿型收敛 skill**。
+This skill also treats review context as a lightweight spec system: before giving recommendations, convert unstable chat signals into explicit `what / how / constraints / verify / context` rules whenever the task includes implementation, repeated iteration, or cross-person handoff risk.
 
-它关注的不是“这个稿子够不够酷”，而是：
-- 这版是不是更容易被拍板
-- 信息是否更均衡、更好浏览
-- 玩法有没有贴住当前容器和场景
-- 视觉是不是耐看，而不是只靠刺激和堆砌
-- 技术实现是不是有更快的上线路径
+## Interaction Mode
 
-一句话：先让方案成立，再让方案出彩。
+When this skill is used for design or product work, start in a `plan-first` workflow automatically.
+
+Rules:
+
+- keep the plan to `2-4` short lines
+- no long explanations
+- each line should be action-first and concise
+- inspect the current uploaded draft before asking any question
+- ask a question only when there is a real blocking branch
+- the question must be based on the current draft, not a generic repeated template
+
+Default behavior:
+
+- if the user's intent already implies direct execution, do the work without asking the old generic format question
+- only ask `修改标注` vs `修改后的设计稿` when that format choice is truly unresolved
+- if a different decision is more relevant to the current draft, ask that instead, for example which block to prioritize or whether to keep a specific interaction pattern
 
 ## When To Use
 
-以下场景优先使用这个 skill：
-- 设计稿已经有方向，但总觉得“过不了稿”
-- 用户要你“收一下这版”“让它更容易过”
-- 需要在趣味性、商业化、易用性、落地成本之间做平衡
-- 概念版、商业化设计汇报、播放器包装、活动页、皮肤、动效样式等需要内部评审拍板
-- 需要把松散 idea 收敛成更稳的方案
+Trigger this skill when the task clearly depends on prior collaboration context such as:
 
-## When Not To Use
+- campaign or activity iteration
+- concept exploration
+- commercialization or growth design
+- product experience feedback
+- AI design exploration
+- design review / signoff loops
+- role-specific approval preferences
+- Kugou-style internal signoff convergence where the user asks to `收一下这版`, `更容易过`, `别太飘`, `做得更耐看`, or `按内部会过的方式改`
 
-以下情况不要强行套用：
-- 用户要的是完全发散探索，不需要收敛
-- 任务重点是纯技术排障，不是评审判断
-- 已经有非常明确的上级结论，只需机械执行
-- 面向外部品牌提案，评审标准明显不属于酷狗内部语境
+Do not use this skill for generic product tasks when no imported collaboration context is needed; in those cases, use the repo, current files, or other more specific skills first.
 
-## 核心判断镜片
+## Workflow
 
-### 1. 先看是否“顺场景”，再看是否“有趣”
+### 0. Start with a concise plan
 
-如果玩法很跳，但和当前容器、当前使用场景不贴，就先收回来。
+Before deep critique or redesign work, give a compact plan such as:
 
-典型判断：
-- 陪伴玩法可以创新，但不要跳脱播放器本身的听歌场景
-- 宠物类玩法要和数值、成长、反馈绑定，别只换成一个空场景皮
-- 动效、彩蛋、趣味细节要服务当前页面，而不是喧宾夺主
+- `先对齐概念版语境`
+- `再拆样式和交互`
+- `最后出标注或改稿`
 
-### 2. 易用性和业务特性一起看，不分家
+Do not turn this into a long outline.
 
-好过稿的方案，不是只好看，而是同时回答：
-- 用户操作是否更顺
-- 业务利益点是否更清楚
-- 当前页面承担的商业化/运营目标是否被强化
+Then immediately inspect the current draft and decide whether a question is needed at all.
 
-如果一个改法能同时提升操作易用性和业务表达，优先级会更高。
+Question rule:
 
-### 3. 优先“耐看”，不要只做“刺激”
+- good: `先只收头部交互，还是整页一起收？`
+- good: `这版先保留横滑推荐，还是改成单主卡？`
+- bad: every design turn opens with the same generic format question even when the user clearly asked for execution
 
-视觉风格里，耐看比一眼炸更重要。
+### 1. Route to the right reference
 
-偏好信号：
-- 不会很花，但有细节
-- 光感、材质、层次可以增强，但不要堆得俗
-- 深色、星轨、光效这类元素可以做强，但要控制在“华丽但不脏”
+Choose the smallest relevant imported context instead of loading everything:
 
-### 4. 先给可浏览、可比较、可拍板的版本
+- activity / campaign note
+- broad collaboration note
+- commercialization / growth-design note
+- topic research note when the task needs user-research guardrails for recommendation, AI music, AI instruments, children, membership, ringtone, HiFi, fan, concept-edition, or decoration decisions
+- Kugou main player Android click baseline when reviewing main-app player entries, star cards, commercial cards, reward prompts, floating buttons, lyrics overlays, or cover-area interactions
+- Kugou main home Android click baseline when reviewing main-app home page, first-screen entries, Kingkong modules, information-flow cards, recommendation cards, mini-player prompts, bottom-tab ideas, or home-page commercial/growth placements
+- concept-exploration note
+- small-group report / signoff note
+- people-lens note when the task is about a specific collaborator role
+- Kugou signoff lens when the task is explicitly about making a page, player, campaign board, commercialization design, concept proposal, or interaction draft easier to pass Kugou internal review
 
-内部评审不是画册展览，先让人快速看懂、快速选、快速比较。
+If the task spans multiple contexts, read only the 2-3 matching notes and synthesize them.
 
-因此要：
-- 单图方便预览
-- 多方案均衡展示
-- A/B 方案不要只摆一个
-- 对同一能力点给出集中呈现，而不是散着让人自己拼
+For a compact routing summary, read [references/routing.md](references/routing.md).
 
-### 5. 创新可以有，但要给低风险落地路径
+### 2. Extract the durable signal, not just the literal chat lines
 
-如果方案能成立，但技术或资源成本偏高，要主动补一条更快落地的实现路径。
+Translate chat context into reusable decisions such as:
 
-例如：
-- 用 shader 下发加速完成
-- 复杂动效优先考虑 lottie / pag，而不是硬上高风险 CSS
-- 需要对接接口时，先定义 state、mock、代理调试方案
-- 出现版本异常时，先回到稳定 commit 再继续迭代
+- product principles
+- UI/interaction preferences
+- collaboration patterns
+- review language
+- implementation guardrails
+- changing or unstable business details that should stay configurable
+- people-specific working styles or review lenses
 
-## 过稿工作流
+Avoid treating the earliest visible message as final truth if later messages or newer docs show iteration.
 
-### Step 1: 先收目标，不先收视觉词
+When the task is implementation-heavy, iteration-heavy, or likely to be handed across people, also normalize the context into a compact spec:
 
-先判断这版稿最重要的是哪一个：
-- 更好浏览
-- 更好操作
-- 更强业务表达
-- 更稳定上线
-- 更耐看
-- 更有趣但不跳脱
+- `what`: what outcome or user-facing change must happen
+- `how`: what structural route or interaction pattern should be used
+- `constraints`: what cannot be weakened, hidden, or distorted
+- `verify`: what evidence, screenshot check, or metric signal would prove it works
+- `context`: what historical note, scenario, or role lens this came from
 
-如果用户没说，我默认按：
-`场景贴合 > 易用性 > 业务表达 > 耐看升级 > 趣味加法`
+Do not dump the whole chain to the user every time. Use it internally to avoid early overconfident answers and to keep revisions stable across rounds.
 
-### Step 2: 找阻碍过稿的点
+### 3. Apply the context to the active task
 
-优先找这几类问题：
-- 方案跳出当前容器语境
-- 只炫技，没有贴住玩法或目标
-- 画面很花，但不耐看
-- 信息展示不均衡，拍板者不好快速比较
-- 技术实现成本高，没给替代路径
-- 只讲创意，不讲上线和交付
+Use the imported context to improve the current work:
 
-### Step 3: 收成“能拍板”的版本
+- For design generation or review:
+  emphasize existing style signals, reward visibility, low-friction interaction, and the relevant business/design constraints.
+  If the task is specifically about `过稿`, `收稿`, `更稳`, `更耐看`, or `更像能上线`, switch into a Kugou signoff-convergence lens:
+  - first make the scheme `成立`, then make it `出彩`
+  - check whether it is easier to browse, compare, approve, and ship
+  - prefer `顺场景`, `耐看`, and `低风险落地路径` over pure novelty
+- For product logic:
+  preserve already-agreed entry points, reporting language, and closure expectations.
+- For implementation:
+  prefer existing templates, shared methods, and current project structures over blank-slate invention.
+  If the task has repeated review churn, rewrite the historical signals into a compact execution spec before changing code or structure.
+- For reviews:
+  check for regressions against the chat-derived principles before suggesting changes.
+- For person-specific analysis:
+  distinguish between `visual style`, `problem framing`, `evidence standard`, and `upward communication style`, instead of collapsing everything into a generic design taste summary.
 
-输出时优先给：
-1. 一句话总判断
-2. P0/P1/P2 问题
-3. 为什么不过
-4. 怎么改更容易过
-5. 如果需要，给一个低风险替代实现
+For visual design tasks:
 
-## 输出格式
+- if the task is concept-edition related, prefer the dedicated concept brand/UI rules over generic taste
+- keep plans and review language concise
+- before producing final artifacts, inspect the current draft and ask only the smallest draft-specific question that is still unresolved
+- if the user already asked to `优化`, `重画`, `直接出稿`, or similar, default to execution instead of asking the old generic format question
+- when the user asks for `优化`, treat the uploaded draft as the quality baseline; do not make the output rougher, cheaper, or more generic than the source
+- preserve the original page aspect ratio and component proportions; never squeeze the page narrower or distort the screen shell just to fit a board or redraw
+- if the user provides style references, first extract `可借鉴信号` and `禁止误用风险`, then propose edits; do not jump straight from reference mood to direct imitation
 
-默认按这个格式输出：
+For Kugou internal signoff-convergence tasks:
 
-### 总判断
+- Read [references/kugou-signoff-lens.md](references/kugou-signoff-lens.md) when the user explicitly wants a design to be easier to pass internal review.
+- Default priority order:
+  - `场景贴合`
+  - `易用性`
+  - `业务表达`
+  - `耐看升级`
+  - `趣味加法`
+- First judge whether the draft is blocked by one of these common signoff risks:
+  - the idea jumps out of the current container or listening scenario
+  - the page is flashy but not durable to look at
+  - information is hard to browse, compare, or approve quickly
+  - the proposal sounds creative but lacks a low-risk shipping path
+  - it talks only about visual polish and not about business expression or implementation pace
+- Prefer output in this order:
+  - one-line overall judgment
+  - `P0 / P1 / P2`
+  - why it is hard to pass now
+  - how to收成更容易过的版本
+  - if needed, a lower-risk implementation fallback
+- Use direct, practical review language rather than decorative critique.
 
-这版最大的优点是什么，最大的卡点是什么。
+For Kugou main app player-page growth/commercialization tasks:
 
-### P0
+- Read [references/kugou-main-player-android-2026-05.md](references/kugou-main-player-android-2026-05.md) before predicting CTR or recommending placement.
+- Treat the data as Android 2026 May daily average click benchmarks: denominator is player page UV; numerator is each button/action click UV.
+- Use nearby player-zone baselines to ground predictions instead of relying only on visual intuition.
+- Compare proposed entries against relevant anchors: cover tap `6.43%`, lyrics overall `22.70%`, floating reward primary claim `2.80%`, floating reward close/ignore `8.68%`, left side bar `6.15%`, right side bar `2.54%`, play/pause `45.68%`, next song `25.66%`.
+- Distinguish entry CTR from landing-page arrival, card claim, post-claim retention, playback interruption, and negative feedback.
+- Prefer stable, low-interruption placements for long-term player entries; reserve cover-dominant or high-interruption patterns for fan-targeted or campaign-window pushes.
 
-必须先改，不改很难过。
+For Kugou main app home-page growth/commercialization tasks:
 
-### P1
+- Read [references/kugou-main-home-android-click-baseline.md](references/kugou-main-home-android-click-baseline.md) before predicting CTR/click penetration or recommending first-screen/feed placement.
+- Treat the first-screen data as `entry click / DAU` and the feed-card data as exposure UV, click UV, UV click rate, exposure UV penetration, and click UV penetration benchmarks.
+- Use home-page anchors to ground predictions: Kingkong area overall `11.62%`, Daily recommendation `7.30%`, Guess you like `2.84%`, Ranking `1.24%`, mini-player overall `46.59%`, song list main area `13.54%`, feed card area UV click rate `17.0%`, personalized music cards UV click rate `17.8%`.
+- Remember that most users see only 1-3 feed cards; card placement depth strongly affects reach.
+- Do not compare an unrelated commercial/growth card directly to high-intent personalized music cards unless the user intent and content value are similar.
+- Distinguish first-screen click penetration from feed card UV click rate, landing arrival, downstream conversion, play/favorite behavior, and home-page interruption.
 
-建议改，改了更稳。
+For topic-specific user-research tasks:
 
-### P2
+- Read only the smallest matching file under [research/](research/) when the task needs compressed qualitative research, audience understanding, positioning guardrails, or willingness-to-pay signals.
+- Use these topic notes as qualitative decision guardrails, not as CTR baselines or precise sample reporting.
+- Prefer them when the question is really about `用户为什么会接受 / 排斥 / 付费 / 留存 / 分享`, rather than purely about visual taste.
+- Match topics narrowly:
+  - AI songs and labeling: [research/AI歌曲专题-AI歌曲认知与平台态度-压缩版.md](research/AI歌曲专题-AI歌曲认知与平台态度-压缩版.md)
+  - AI instruments and arrangement switching: [research/AI演奏家专题-AI演奏家与变乐器需求-压缩版.md](research/AI演奏家专题-AI演奏家与变乐器需求-压缩版.md)
+  - children and parents: [research/儿童内容专题-儿童听歌与家长需求-压缩版.md](research/儿童内容专题-儿童听歌与家长需求-压缩版.md)
+  - recommendation strategy: [research/推荐专题-汽水QQ酷狗推荐体验-压缩版.md](research/推荐专题-汽水QQ酷狗推荐体验-压缩版.md)
+  - concept-edition review rules: [research/概念版专题-设计评审与过稿规律-压缩版.md](research/概念版专题-设计评审与过稿规律-压缩版.md)
+  - artist fans: [research/艺粉专题-酷狗特色歌手粉丝洞察-压缩版.md](research/艺粉专题-酷狗特色歌手粉丝洞察-压缩版.md)
+  - decoration and skins: [research/装扮专题-装扮用户需求-压缩版.md](research/装扮专题-装扮用户需求-压缩版.md)
+  - membership and commercialization: [research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md](research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md)
+  - ringtone: [research/铃声专题-酷狗铃声用户需求-压缩版.md](research/铃声专题-酷狗铃声用户需求-压缩版.md)
+  - HiFi and sound quality: [research/音质专题-HiFi用户需求与平台选择-压缩版.md](research/音质专题-HiFi用户需求与平台选择-压缩版.md)
 
-属于锦上添花。
+### 4. Keep the boundary honest
 
-### 过稿改法
+If the source doc was based on partial visible history rather than full exported chat logs, say so briefly when it matters.
 
-直接说怎么收，不要只讲抽象原则。
+Examples:
 
-### 落地提醒
+- a small-group report note may be a first-pass capture from currently visible messages
+- an activity note may include partial image-message context without full OCR
+- prize configs, popup rules, or rollout details may have changed over time and should remain configurable
 
-如果有技术、资源、交付节奏风险，要明确指出。
+## Default Heuristics
 
-## 常用话术风格
+- Default to low-friction interaction: fewer steps, fewer confirmations, fewer buried rewards.
+- Prefer explicit reward or benefit visibility over hiding incentives in rules text.
+- Treat `模板化提效` as a real business strategy, not just a visual convenience.
+- When chats show repeated iteration, design the implementation to be easy to update.
+- When the task is really about a specific collaborator role, default to extracting their method of decision-making, validation standard, and reporting style before talking about pure visual form.
+- If the user asks for direct execution, do the work instead of only summarizing the chat history.
+- When the user gives long chat logs, recordings, or moving-target feedback, compress them into a short spec before acting:
+  - `目标`
+  - `关键动作`
+  - `不能动`
+  - `验证方式`
+  - `来源语境`
+- Prefer waiting until the core information is complete before making a strong judgment. If the evidence is partial, mark the confidence honestly instead of filling gaps with style-language guesses.
 
-这个 skill 的语气不需要装腔，偏向这种风格：
-- “还是比较喜欢这种”
-- “不会很花又很有细节，这种耐看好多”
-- “玩法可以继续创新，但是要考虑别跳脱当前场景”
-- “这个布局在操作易用性和业务表达上都会更强一点”
-- “先给几页均衡展示，方便比较”
-- “技术这块用更稳的方式加速完成”
+## Output Patterns
 
-特点：
-- 判断直接
-- 不说空话
-- 先给方向，再给收法
-- 不追求长篇大论
+When responding after using this skill, prefer one of these shapes:
 
-## 反模式
+- `Context + recommendation`: brief reminder of the relevant imported context, then the recommendation.
+- `Context + implementation rule`: what the historical chat implies the code or design should preserve.
+- `Context + risk`: when the task conflicts with earlier agreed principles or depends on unstable historical details.
+- `Context + compact spec`: for repeated review loops, implementation handoff, or tasks that need a stable `what / how / constraints / verify` frame.
 
-以下内容很容易不过稿：
-- 只堆视觉刺激，不讲耐看度
-- 只做趣味梗，不贴使用场景
-- 提案全是大词，没有对比版本
-- 只说“更高级”，不说哪里更顺、哪里更稳
-- 动效方案脱离实现条件
-- 视觉方案成立，但交付路径含糊
+## References
 
-## 诚实边界
-
-- 这个 skill 主要基于视频中的聊天截图和评审语句提炼，不是完整导出的全量聊天记录。
-- 其中最强证据来自 `Q音-柱哥` 的评审表达，以及协作侧关于技术落地、mock、回退版本、动效实现的补充聊天。
-- 它更像“酷狗内部过稿判断风格”的浓缩镜片，不等于完整还原某一个人的全部设计能力。
-- 如果任务脱离酷狗内部语境、商业化语境或概念版/播放器语境，命中率会下降。
-
-## Evidence
-
-关键证据见：
-- [01-video-evidence.md](/Users/xiangchengjin/Documents/翻译/.agents/skills/酷狗过稿第一人/references/research/01-video-evidence.md)
+- [references/routing.md](references/routing.md): quick routing table and durable signals
+- [references/spec-coding.md](references/spec-coding.md): lightweight spec-compression rules for turning noisy review context into stable execution constraints
+- [references/kugou-signoff-lens.md](references/kugou-signoff-lens.md): Kugou internal signoff-convergence lens merged from `酷狗过稿第一人`
+- [references/kugou-main-player-android-2026-05.md](references/kugou-main-player-android-2026-05.md): Android 2026 May main Kugou player-page click benchmarks and placement guardrails
+- [references/kugou-main-home-android-click-baseline.md](references/kugou-main-home-android-click-baseline.md): main Kugou home-page first-screen and feed-card click benchmarks and placement guardrails
+- [research/AI歌曲专题-AI歌曲认知与平台态度-压缩版.md](research/AI歌曲专题-AI歌曲认知与平台态度-压缩版.md): AI songs, labeling, and platform attitude guardrails
+- [research/AI演奏家专题-AI演奏家与变乐器需求-压缩版.md](research/AI演奏家专题-AI演奏家与变乐器需求-压缩版.md): AI instrument-switching and arrangement demand guardrails
+- [research/儿童内容专题-儿童听歌与家长需求-压缩版.md](research/儿童内容专题-儿童听歌与家长需求-压缩版.md): children-content, parent decision-maker, and family-value guardrails
+- [research/推荐专题-汽水QQ酷狗推荐体验-压缩版.md](research/推荐专题-汽水QQ酷狗推荐体验-压缩版.md): recommendation surprise-vs-stability guardrails
+- [research/概念版专题-设计评审与过稿规律-压缩版.md](research/概念版专题-设计评审与过稿规律-压缩版.md): concept-edition review heuristics in compressed research form
+- [research/艺粉专题-酷狗特色歌手粉丝洞察-压缩版.md](research/艺粉专题-酷狗特色歌手粉丝洞察-压缩版.md): artist-fan segmentation and fan-operation guardrails
+- [research/装扮专题-装扮用户需求-压缩版.md](research/装扮专题-装扮用户需求-压缩版.md): skins, decoration, and self-expression guardrails
+- [research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md](research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md): membership, conversion, and commercialization guardrails
+- [research/铃声专题-酷狗铃声用户需求-压缩版.md](research/铃声专题-酷狗铃声用户需求-压缩版.md): ringtone journey and willingness-to-pay guardrails
+- [research/音质专题-HiFi用户需求与平台选择-压缩版.md](research/音质专题-HiFi用户需求与平台选择-压缩版.md): HiFi audience and sound-quality platform-choice guardrails
