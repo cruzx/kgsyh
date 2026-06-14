@@ -12,6 +12,10 @@
   - 如何把一次对话沉淀成长期可复用规则
 - `SESSION_LOG.md`
   - 每次重要协作后的简短沉淀记录
+- `SESSION_TEMPLATE.md`
+  - 标准化沉淀模板
+- `../scripts/append_session_log.py`
+  - 一键追加单条学习记录的辅助脚本
 
 ## 使用方式
 
@@ -22,6 +26,18 @@
 3. 必要时查看 `SESSION_LOG.md` 最近几条
 4. 完成任务后，把这次对话的有效信号写入 `SESSION_LOG.md`
 5. 如果同类信号重复出现 3 次以上，再升级写入 `PROFILE.md`
+
+如果需要更稳定地追加记录，可优先使用：
+
+```bash
+python scripts/append_session_log.py \
+  --task "任务内容" \
+  --reaction "用户反应" \
+  --effective "有效做法" \
+  --ineffective "无效做法" \
+  --rule "可复用规则" \
+  --promote "否"
+```
 
 ## 目标
 

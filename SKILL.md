@@ -79,6 +79,7 @@ Before doing substantial work:
 After each substantial conversation or iteration:
 
 - append one short distilled note to [learning/SESSION_LOG.md](learning/SESSION_LOG.md)
+- prefer the standard template in [learning/SESSION_TEMPLATE.md](learning/SESSION_TEMPLATE.md)
 - if a signal is repeated, explicit, and cross-task stable, promote it into [learning/PROFILE.md](learning/PROFILE.md)
 
 Do not claim hidden automatic learning. The evolution mechanism is explicit, repo-native, and reviewable.
@@ -286,6 +287,7 @@ When responding after using this skill, prefer one of these shapes:
 - [learning/PROFILE.md](learning/PROFILE.md): stable learned preferences and review rules
 - [learning/EVOLUTION_RULES.md](learning/EVOLUTION_RULES.md): how to distill each conversation
 - [learning/SESSION_LOG.md](learning/SESSION_LOG.md): recent conversation learnings
+- [learning/SESSION_TEMPLATE.md](learning/SESSION_TEMPLATE.md): standard log-entry template
 - [learning/SCORECARD.md](learning/SCORECARD.md): pre-delivery quality scoring
 - [learning/CREATIVE_ENGINE.md](learning/CREATIVE_ENGINE.md): structured creativity expansion and convergence
 - [learning/ITERATION_PROTOCOL.md](learning/ITERATION_PROTOCOL.md): self-critique loop before delivery
