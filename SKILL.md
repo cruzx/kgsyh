@@ -246,3 +246,7 @@ When responding after using this skill, prefer one of these shapes:
 - [research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md](research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md): membership, conversion, and commercialization guardrails
 - [research/铃声专题-酷狗铃声用户需求-压缩版.md](research/铃声专题-酷狗铃声用户需求-压缩版.md): ringtone journey and willingness-to-pay guardrails
 - [research/音质专题-HiFi用户需求与平台选择-压缩版.md](research/音质专题-HiFi用户需求与平台选择-压缩版.md): HiFi audience and sound-quality platform-choice guardrails
+
+## Author
+
+Signed by Cruz Olli
