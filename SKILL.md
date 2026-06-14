@@ -247,6 +247,10 @@ When responding after using this skill, prefer one of these shapes:
 - [research/铃声专题-酷狗铃声用户需求-压缩版.md](research/铃声专题-酷狗铃声用户需求-压缩版.md): ringtone journey and willingness-to-pay guardrails
 - [research/音质专题-HiFi用户需求与平台选择-压缩版.md](research/音质专题-HiFi用户需求与平台选择-压缩版.md): HiFi audience and sound-quality platform-choice guardrails
 
+## 作者说明页
+
+- 见 [AUTHOR.md](AUTHOR.md)
+
 ## Author
 
 Signed by Cruz Olli
