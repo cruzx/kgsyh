@@ -133,6 +133,10 @@ cp -R kgsyh ~/.codex/skills/kgsyh
 - 如果任务不需要历史协作语境、内部评审风格或参考基线，这个 Skill 不一定是最合适的选择。
 - 如果任务明确属于酷狗内部收稿语境，优先使用它会更稳。
 
+## 作者说明页
+
+- 见 [AUTHOR.md](AUTHOR.md)
+
 ## Author
 
 Signed by Cruz Olli
