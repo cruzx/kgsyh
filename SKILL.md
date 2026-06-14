@@ -63,6 +63,41 @@ Question rule:
 - good: `这版先保留横滑推荐，还是改成单主卡？`
 - bad: every design turn opens with the same generic format question even when the user clearly asked for execution
 
+### 0.5 Evolution loop
+
+This skill should evolve across repeated use through repo-native notes.
+
+Before doing substantial work:
+
+- read [learning/PROFILE.md](learning/PROFILE.md)
+- read [learning/EVOLUTION_RULES.md](learning/EVOLUTION_RULES.md)
+- read [learning/SCORECARD.md](learning/SCORECARD.md)
+- read [learning/CREATIVE_ENGINE.md](learning/CREATIVE_ENGINE.md)
+- read [learning/ITERATION_PROTOCOL.md](learning/ITERATION_PROTOCOL.md)
+- if the task seems related to a recent repeated pattern, inspect the latest entries in [learning/SESSION_LOG.md](learning/SESSION_LOG.md)
+
+After each substantial conversation or iteration:
+
+- append one short distilled note to [learning/SESSION_LOG.md](learning/SESSION_LOG.md)
+- if a signal is repeated, explicit, and cross-task stable, promote it into [learning/PROFILE.md](learning/PROFILE.md)
+
+Do not claim hidden automatic learning. The evolution mechanism is explicit, repo-native, and reviewable.
+
+### 0.6 Quality and creativity bar
+
+When the user asks for a version that should be better, more complete, more perfect, or more creative:
+
+- do not stop at the first acceptable answer
+- internally create at least 2 candidate routes when feasible: one `稳`, one `出彩`
+- run a quick self-score using [learning/SCORECARD.md](learning/SCORECARD.md)
+- run one self-critique pass using [learning/ITERATION_PROTOCOL.md](learning/ITERATION_PROTOCOL.md)
+- prefer delivering either:
+  - a strongest signoff-ready version
+  - a strongest creative version
+  - or a clearly judged best-balanced version
+
+Do not promise perfection. The operational target is: more stable, more memorable, less generic, and less likely to be sent back.
+
 ### 1. Route to the right reference
 
 Choose the smallest relevant imported context instead of loading everything:
@@ -130,6 +165,7 @@ For visual design tasks:
 
 - if the task is concept-edition related, prefer the dedicated concept brand/UI rules over generic taste
 - keep plans and review language concise
+- when the user explicitly wants stronger creativity, use [learning/CREATIVE_ENGINE.md](learning/CREATIVE_ENGINE.md) and avoid stopping at pure safe收法
 - before producing final artifacts, inspect the current draft and ask only the smallest draft-specific question that is still unresolved
 - if the user already asked to `优化`, `重画`, `直接出稿`, or similar, default to execution instead of asking the old generic format question
 - when the user asks for `优化`, treat the uploaded draft as the quality baseline; do not make the output rougher, cheaper, or more generic than the source
@@ -246,6 +282,13 @@ When responding after using this skill, prefer one of these shapes:
 - [research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md](research/酷狗会员专题-会员触点与商业化设计规律-压缩版.md): membership, conversion, and commercialization guardrails
 - [research/铃声专题-酷狗铃声用户需求-压缩版.md](research/铃声专题-酷狗铃声用户需求-压缩版.md): ringtone journey and willingness-to-pay guardrails
 - [research/音质专题-HiFi用户需求与平台选择-压缩版.md](research/音质专题-HiFi用户需求与平台选择-压缩版.md): HiFi audience and sound-quality platform-choice guardrails
+- [learning/README.md](learning/README.md): evolution-memory overview
+- [learning/PROFILE.md](learning/PROFILE.md): stable learned preferences and review rules
+- [learning/EVOLUTION_RULES.md](learning/EVOLUTION_RULES.md): how to distill each conversation
+- [learning/SESSION_LOG.md](learning/SESSION_LOG.md): recent conversation learnings
+- [learning/SCORECARD.md](learning/SCORECARD.md): pre-delivery quality scoring
+- [learning/CREATIVE_ENGINE.md](learning/CREATIVE_ENGINE.md): structured creativity expansion and convergence
+- [learning/ITERATION_PROTOCOL.md](learning/ITERATION_PROTOCOL.md): self-critique loop before delivery
 
 ## 作者说明页
 
