@@ -1,9 +1,14 @@
 ---
-name: guogao-tongguan-skill
-description: Use when a task needs to pass design or product review by grounding decisions in previously imported collaboration context, especially for campaign work, concept exploration, growth design, product experience feedback, or AI design exploration.
+name: kgsyh
+description: 酷狗收一下候选 skill。用于设计评审、方案收敛、商业化页面、概念稿、活动页、交互稿等内部过稿场景。触发词：kgsyh、收一下这版、更容易过、过稿、方案收敛、概念稿收口、商业化页评审。
+description_zh: 调用既有协作沉淀，按上下文推进过稿
+description_en: Use existing collaboration context to converge a design or product proposal toward signoff
+version: 1.0.0
 ---
 
-# 过稿通关skill
+# kgsyh
+
+过稿通关 skill。
 
 Use this skill to route a collaboration-heavy task to the right imported context before proposing designs, product logic, review feedback, or implementation direction, so the output is more likely to顺着既有语境过稿。
 
