@@ -1,6 +1,6 @@
-# kgsyh
+# woodstuck
 
-`kgsyh` 是一个面向设计评审与方案收敛的 Skill，重点帮助我们在复杂协作语境里，把一版设计、交互稿、商业化页面或概念方案收成更容易通过内部评审的版本。
+`woodstuck` 是一个面向设计评审与方案收敛的 Skill，重点帮助我们在复杂协作语境里，把一版设计、交互稿、商业化页面或概念方案收成更容易通过内部评审的版本。
 
 它不是单纯做“审美点评”，也不是只做“产品逻辑检查”。它更像一个结合了协作上下文、业务目标、用户研究和内部过稿经验的收敛工具。
 
@@ -89,7 +89,7 @@
 - 哪儿不统一
 - 哪儿还可以优化
 
-`kgsyh` 更关注的是：
+`woodstuck` 更关注的是：
 
 - 为什么这版还不容易过
 - 卡点是在场景、信息、业务、视觉，还是落地路径
@@ -110,11 +110,11 @@
 
 ## 安装
 
-把整个仓库放进你的 skill 目录，并保持目录名为 `kgsyh`：
+把整个仓库放进你的 skill 目录，并保持目录名为 `woodstuck`：
 
 ```bash
-git clone <your-repo-url> kgsyh
-cp -R kgsyh ~/.codex/skills/kgsyh
+git clone <your-repo-url> woodstuck
+cp -R woodstuck ~/.codex/skills/woodstuck
 ```
 
 如果你使用的是其他本地 skill 根目录，也可以保持同样结构复制进去。
