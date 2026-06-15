@@ -189,6 +189,18 @@ Mode rules:
 
 If multiple modes are present, choose one主模式 and suppress the rest unless they block the judgment.
 
+Before judging a business or growth task, also classify the objective lens:
+
+- `会员付费型`：primary goal is paid conversion into membership or rights purchase
+- `概念版规模+付费型`：goal is both scale expansion and paid growth
+
+Lens rules:
+
+- `会员付费型` should prioritize `付费承接 / 权益表达 / 支付链路 / 购买理由`
+- `概念版规模+付费型` should prioritize `规模扩张 / 分享传播 / 内容或玩法带动 / 后续付费承接`
+
+Do not use the same judging standard for both.
+
 ### 2. Extract the durable signal, not just the literal chat lines
 
 Translate chat context into reusable decisions such as:
@@ -222,6 +234,11 @@ When the user asks for stronger completeness or when the task includes interacti
 
 - `segments`: which user groups or entitlement states must be checked separately
 - `flow`: what the next-step path is after every key action
+
+For business/growth tasks, also extend the spec with:
+
+- `scale`: what mechanism can broaden reach, sharing, re-entry, or user growth
+- `pay`: what mechanism can convert that scale into payment or stronger commercial value
 
 ### 3. Apply the context to the active task
 
@@ -295,12 +312,17 @@ For interaction and signoff detail review:
 For broader business-value review:
 
 - do not stop at `好不好看` or `顺不顺`
+- actively look for commercialization and user-growth opportunities even if the user only showed a single screen
 - judge whether the interaction can become:
   - a reusable growth mechanic
   - a repeatable commercialization module
   - a sharing/gifting/social trigger
   - a membership perception amplifier
   - a bridge into adjacent functions
+- for each promising point, ask:
+  - can it bring more users in?
+  - can it increase payment after users come in?
+  - can it do both?
 - if the current interaction only solves a single-page problem, say so directly
 - if there is a stronger adjacent route, propose it even when it sits just outside the current page
 - always separate:
@@ -308,6 +330,17 @@ For broader business-value review:
   - `商业价值上限`
   - `可扩展方向`
   - `扩展风险`
+
+For membership-specific tasks:
+
+- default business question is `为什么用户会在这里付费`
+- prioritize clearer payment triggers over broad speculative feature sprawl
+
+For concept-edition tasks:
+
+- default business question is `这件事能不能先把规模做大，再把规模导向付费`
+- actively search for combinations of `传播 / 参与 / 留存 / 付费`
+- avoid proposals that only涨规模 but have no payment handoff
 
 For Kugou internal signoff-convergence tasks:
 
