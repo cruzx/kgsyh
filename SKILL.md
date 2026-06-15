@@ -90,6 +90,13 @@ After each substantial conversation or iteration:
 - prefer the standard template in [learning/SESSION_TEMPLATE.md](learning/SESSION_TEMPLATE.md)
 - if a signal is repeated, explicit, and cross-task stable, promote it into [learning/PROFILE.md](learning/PROFILE.md)
 
+Scheduled maintenance rule:
+
+- every day at `12:00`, `15:00`, and `18:00`, run one lightweight distillation pass for the current thread and append useful stable signals into the `woodstuck` learning files
+- every day at `18:30`, run one sync pass and upload the day's confirmed `woodstuck` updates to the Git repository
+- the scheduled passes should prefer summarizing `stable preference / reusable rule / review method / business judgment / current external signal`, not noisy temporary chat fragments
+- if a scheduled pass finds nothing durable, it may skip file edits rather than forcing filler notes
+
 Do not claim hidden automatic learning. The evolution mechanism is explicit, repo-native, and reviewable.
 
 ### 0.55 Networked learning loop
