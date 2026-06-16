@@ -188,6 +188,10 @@ cp -R woodstuck ~/.codex/skills/woodstuck
 
 如果你使用的是其他本地 skill 根目录，也可以保持同样结构复制进去。
 
+如果你要把它安装到别人电脑，并希望对方也能继续“自主学习和进化”，再看：
+
+- [DISTRIBUTION.md](DISTRIBUTION.md)
+
 ## 推荐提问方式
 
 ```text
