@@ -68,8 +68,9 @@ Durable signals:
 - repeated-play potential, randomness, and low-friction mechanics matter in activity design
 - AI entry flows should be card-based or preset-driven to lower startup cost
 - strong solutions are expected to become reusable strategy assets, not just one-off pages
-- for main-app player placement decisions, read `references/kugou-main-player-android-2026-05.md` and ground CTR predictions in the 2026 May Android player-page click benchmarks
-- for main-app home-page placement decisions, read `references/kugou-main-home-android-click-baseline.md` and ground CTR/click-penetration predictions in first-screen and feed-card benchmarks
+- for main-app player placement decisions, read `benchmarks/kugou-main-player-android-2026-05.md` and ground CTR predictions in the 2026 May Android player-page click benchmarks
+- for main-app home-page placement decisions, read `benchmarks/kugou-main-home-android-click-baseline.md` and ground CTR/click-penetration predictions in first-screen and feed-card benchmarks
+- when the task explicitly mentions `商业化设计组`, day-to-day group review, template/brand-book buildup, repeated popup/card normalization, or a need to borrow the merged judgment style of multiple internal reviewers, also read `references/business-design-group-cluster-lens.md`
 
 ### 4. Small-Group Report / Signoff Context
 
@@ -87,6 +88,26 @@ Durable signals:
 - template-building is used to stabilize quality when source materials are inconsistent
 - popup design often gets normalized toward lighter color use, clearer layout, less flashy titles, and more refined imagery
 - blended guidance patterns can be preferred over hard popup dependence
+
+### 4.5 Business-Design Group Cluster Context
+
+Read `references/business-design-group-cluster-lens.md` when the task mentions:
+
+- `商业化设计组`
+- 多人合体评审
+- 组内拍板口径
+- 规范提效
+- 品牌书 / 模版 / Figma 资产沉淀
+- “这更像规范问题还是方向问题”
+- 一个页面上多个业务入口一起抢位
+
+Durable signals:
+
+- common optimization should be normalized into standards when possible
+- the first split is often `business type`, then `direction issue vs standard issue`
+- interference control matters as much as visual polish
+- promising ideas still need demo, data, or a reuse path before being over-sold
+- this context often tries to turn one review outcome into a reusable asset
 
 ### 5. Concept Exploration Context
 

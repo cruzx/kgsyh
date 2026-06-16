@@ -30,12 +30,14 @@
 
 ## 使用方式
 
-每次命中 `woodstuck` 时：
+每次命中 `woodstuck` 时，不再默认把学习层全读一遍。
+
+推荐顺序：
 
 1. 先读 `PROFILE.md`
-2. 再读 `EVOLUTION_RULES.md`
+2. 只有在要做沉淀/进化动作时，再读 `EVOLUTION_RULES.md`
 3. 如果任务偏当前趋势或方向判断，再读 `ONLINE_LEARNING_PROTOCOL.md`
-4. 必要时查看 `SESSION_LOG.md` 最近几条
+4. 只有任务明显命中近期重复模式时，才查看 `SESSION_LOG.md` 最近几条
 5. 如果需要最新外部输入，先联网，再把高价值信号写入 `TREND_LOG.md`
 6. 完成任务后，把这次对话的有效信号写入 `SESSION_LOG.md`
 7. 如果同类信号重复出现 3 次以上，再升级写入 `PROFILE.md`
