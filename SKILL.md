@@ -138,9 +138,8 @@ Business-design-group rule:
 Membership privilege asset rule:
 
 - when the task mentions `概念版会员`、`会员特权`、`特权点位`、`音质`、`下载`、`铃声`、`特权详情页`、`特权集合页`、`权益表达`、or `付费链路`, inspect [assets/会员特权/README.md](assets/会员特权/README.md) first
-- then use:
-  - [assets/会员特权/特权功能梳理.pdf](assets/会员特权/特权功能梳理.pdf) for `转化主力 / 圈人 / 触点 / 试用到期拦截 / 升级逻辑`
-  - [assets/会员特权/概念版-会员特权表.xlsx](assets/会员特权/概念版-会员特权表.xlsx) for `特权矩阵 / 页面归属 / 数据排序 / 权益差异`
+- use the source files listed in that README when they are present
+- if the package is partial, fall back to stable membership rules in `learning/PROFILE.md` and the smallest matching topic note under `research/`
 
 Competitor screenshot asset rule:
 
@@ -151,6 +150,8 @@ Competitor screenshot asset rule:
 ### 1.5 Task-mode router
 
 Route the task into one primary mode first.
+
+Mode-specific tactics live in [playbooks/](playbooks/). Keep the main skill focused on routing and hard guardrails.
 
 - `视觉收稿`
   - read [playbooks/visual-review.md](playbooks/visual-review.md)
@@ -294,6 +295,8 @@ Examples:
 - When chats show repeated iteration, design the implementation to be easy to update.
 - If the user asks for direct execution, do the work instead of only summarizing the chat history.
 - If evidence is partial, mark the confidence honestly instead of filling gaps with style-language guesses.
+
+For mode-specific review checklists, use the routed playbook first instead of re-expanding those details in the main skill.
 
 ## Output Patterns
 
