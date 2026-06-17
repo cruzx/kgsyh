@@ -93,6 +93,7 @@
 ├── README.md
 ├── agents/
 ├── assets/
+├── assets/竞品/
 ├── assets/会员特权/
 ├── benchmarks/
 ├── playbooks/
@@ -111,6 +112,7 @@
 - `learning/`：进化层，存稳定偏好、会话沉淀、趋势蒸馏、评分与迭代规则
 - `research/`：按主题整理的压缩研究材料
 - `assets/`：辅助理解语境的图、截图和资料包
+- `assets/竞品/`：竞品截图归类资产区，按玩法结构而不是视觉风格存放页面参考
 - `assets/会员特权/`：概念版会员特权资料包，包含 `特权功能梳理.pdf` 和 `概念版-会员特权表.xlsx`
 - `agents/`：配套 agent 配置
 

@@ -97,6 +97,12 @@ After substantial work:
 
 Scheduled maintenance exists separately and should keep the same principle: record only durable signals, not noisy fragments.
 
+Online-learning output rule:
+
+- keep the learning ability and external scanning flow
+- default to text distillation in `SESSION_LOG.md`, `TREND_LOG.md`, or `PROFILE.md`
+- do not auto-generate report-style outputs or daily summary boards unless the user explicitly asks for one
+
 Learning-source rule:
 
 - for trend or competitor learning, use official sources as the mechanism truth layer
@@ -135,6 +141,12 @@ Membership privilege asset rule:
 - then use:
   - [assets/会员特权/特权功能梳理.pdf](assets/会员特权/特权功能梳理.pdf) for `转化主力 / 圈人 / 触点 / 试用到期拦截 / 升级逻辑`
   - [assets/会员特权/概念版-会员特权表.xlsx](assets/会员特权/概念版-会员特权表.xlsx) for `特权矩阵 / 页面归属 / 数据排序 / 权益差异`
+
+Competitor screenshot asset rule:
+
+- when the task mentions `美叶`、`竞品截图`、`截图池`、`截图归类`、`页面灵感`、`播放器截图`、`会员中心截图`、`活动弹窗截图`, inspect [assets/竞品/README.md](assets/竞品/README.md) first
+- store collected screenshots under `assets/竞品/` by reusable pattern bucket, not as flat loose files in the asset root
+- keep `官方机制层判断` in learning files, and use `assets/竞品/` for interface-layer references and grouped examples
 
 ### 1.5 Task-mode router
 
